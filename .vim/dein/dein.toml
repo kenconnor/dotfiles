@@ -2,3 +2,6 @@
 
 [[plugins]]
 repo = 'neoclide/coc.nvim'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
