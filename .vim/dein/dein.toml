@@ -1,0 +1,4 @@
+# [[dein.toml]]
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
