@@ -1,3 +1,8 @@
+set enc=utf-8
+set fenc=utf-8
+"
+" Dein
+"
 " Ward off unexpected things that your distro might have made, as
 " well as sanely reset options when re-sourcing .vimrc
 set nocompatible
