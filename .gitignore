@@ -3,3 +3,5 @@
 !.gitignore
 !.vimrc
 !.vim
+!Dockerfile
+!docker-compose.yaml
