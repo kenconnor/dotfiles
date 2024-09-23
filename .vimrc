@@ -3,7 +3,7 @@
 set nocompatible
 
 " Set Dein base path (required)
-let s:dein_base = '/root/.cache/dein'
+let s:dein_base = '/root/.vim/dein'
 
 " Set Dein source path (required)
 let s:dein_src = '/root/.cache/dein/repos/github.com/Shougo/dein.vim'
@@ -11,17 +11,13 @@ let s:dein_src = '/root/.cache/dein/repos/github.com/Shougo/dein.vim'
 " Set Dein runtime path (required)
 execute 'set runtimepath+=' . s:dein_src
 
-" Call Dein initialization (required)
-call dein#begin(s:dein_base)
-
-call dein#add(s:dein_src)
-
-" Your plugins go here:
-"call dein#add('Shougo/neosnippet.vim')
-"call dein#add('Shougo/neosnippet-snippets')
-
-" Finish Dein initialization (required)
-call dein#end()
+if dein#load_state(s:dein_base)
+ call dein#begin(s:dein_base)
+ let s:toml = '/root/.vim/dein/dein.toml'
+ call dein#load_toml(s:toml, {'lazy':0})
+ call dein#end()
+ call dein#save_state()
+endif
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Use this to allow intelligent auto-indenting for each filetype,
@@ -32,6 +28,6 @@ filetype indent plugin on
 syntax enable
 
 " Uncomment if you want to install not-installed plugins on startup.
-"if dein#check_install()
-" call dein#install()
-"endif
+if dein#check_install()
+ call dein#install()
+endif
