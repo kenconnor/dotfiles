@@ -27,4 +27,4 @@ RUN curl -sL install-node.vercel.app/lts | bash -s -- -y
 RUN mkdir /root/.cache
 RUN cd $HOME && sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)" --overwrite-config ./.cache/dein --use-vim-config
 ADD https://api.github.com/repos/kenconnor/dotfiles/git/refs/heads/main version.json
-COPY --from=build-env /tmp/dotfiles/. /root/
+COPY . /root/
