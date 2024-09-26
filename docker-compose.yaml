@@ -2,3 +2,12 @@ services:
   vim:
     build:
       context: .
+      dockerfile: DockerfileVim
+  humble-vim:
+    build:
+      context: .
+      dockerfile: DockerfileRos2Humble
+  humble-nvim:
+    build:
+      context: .
+      dockerfile: DockerfileRos2HumbleNvim

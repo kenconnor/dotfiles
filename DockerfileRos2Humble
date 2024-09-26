@@ -9,8 +9,6 @@ RUN tar -zxvf v9.1.0741.tar.gz
 RUN cd vim-9.1.0741/ \
  && ./configure \
  && make
-RUN cd /tmp \
- && git clone https://github.com/kenconnor/dotfiles.git
 
 FROM osrf/ros:humble-desktop
 COPY --from=build-env /vim-9.1.0741 /root/vim-9.1.0741
@@ -26,5 +24,7 @@ RUN cd /root/vim-9.1.0741 && make install
 RUN curl -sL install-node.vercel.app/lts | bash -s -- -y
 RUN mkdir /root/.cache
 RUN cd $HOME && sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)" --overwrite-config ./.cache/dein --use-vim-config
-ADD https://api.github.com/repos/kenconnor/dotfiles/git/refs/heads/main version.json
-COPY . /root/
+
+COPY .vimrc /root/.vimrc
+COPY .vim/dein/dein.toml /root/.vim/dein/dein.toml
+COPY .vim/coc-settings.json /root/.vim/coc-settings.json
