@@ -17,7 +17,7 @@ let s:dein_src = '/root/.cache/dein/repos/github.com/Shougo/dein.vim'
 execute 'set runtimepath+=' . s:dein_src
 
 if dein#load_state(s:dein_base)
- call dein#begin(s:dein_base)
+ silent call dein#begin(s:dein_base)
  let s:toml = '/root/.vim/dein/dein.toml'
  call dein#load_toml(s:toml, {'lazy':0})
  call dein#end()
