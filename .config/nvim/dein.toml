@@ -7,3 +7,6 @@ build = 'coc#util#install()'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'smoka7/hop.nvim'
