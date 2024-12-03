@@ -5,7 +5,6 @@
   echo "CompileFlags:" >> .clangd
   echo "  Add:" >> .clangd
   echo "    - -std=c++17" >> .clangd
-  find /opt/ros/${ROS_DISTRO}/include/ -maxdepth 1 -type d | sed 's/^/    - --include-directry=/' >> .clangd
   ```
 - Reference
   - [clangdの設定ファイル](https://zenn.dev/tkcd/articles/clangd-config)
