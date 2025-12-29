@@ -4,7 +4,7 @@ vim.opt.mouse = ''
 vim.cmd[[colorscheme evening]]
 vim.g.mapleader = ' '
 
-require('keymap-config')
 require('dein-config')
 require('coc-config')
 require('hop-config')
+require('keymap-config')
